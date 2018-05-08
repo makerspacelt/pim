@@ -1,3 +1,8 @@
 couch/*
+
 couch/snippets/.htaccess
 !couch/snippets
+
+!couch/addons
+couch/addons/*
+!couch/addons/kfunctions.php
