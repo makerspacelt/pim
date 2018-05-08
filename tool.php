@@ -59,6 +59,12 @@
         type='text'
         group='tool_info_group'
     />
+    <cms:editable
+        name='tool_date'
+        label='Įsigyjimo data'
+        type='text'
+        group='tool_info_group'
+    />
     
     <cms:editable
         name='tool_params_group'
