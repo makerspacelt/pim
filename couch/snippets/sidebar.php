@@ -16,9 +16,9 @@
     <div class="card my-4">
         <h5 class="card-header">Kategorijos</h5>
         <div class="list-group list-group-flush">
-            <a href="tool.html" class="list-group-item">Atsuktuvai</a>
-            <a href="tool.html" class="list-group-item">Staklės</a>
-            <a href="tool.html" class="list-group-item">Šlifarkės</a>
+            <a href="tool.php" class="list-group-item">Atsuktuvai</a>
+            <a href="tool.php" class="list-group-item">Staklės</a>
+            <a href="tool.php" class="list-group-item">Šlifarkės</a>
         </div>
     </div>
 </div>

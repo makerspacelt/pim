@@ -1,6 +1,67 @@
 <?php require_once( 'couch/cms.php' ); ?>
 <cms:template title='Įrankiai' clonable='1'>
+    <cms:editable
+        name='tool_barcode'
+        label='Barkodas'
+        type='text'
+    />
     
+    <cms:editable
+        name='tool_desc'
+        label='Aprašymas'
+        type='nicedit'
+    />
+    
+    <cms:editable
+        name='tool_info_group'
+        label='Papildoma informacija'
+        type='group'
+        collapsed='1'
+    />
+    <cms:editable
+        name='tool_shop_links'
+        label='Kur galima pirkti?'
+        type='textarea'
+        group='tool_info_group'
+    />
+    <cms:editable
+        name='tool_price'
+        label='Kaina'
+        type='text'
+        group='tool_info_group'
+    />
+    
+    <cms:editable
+        name='tool_params_group'
+        label='Parametrai'
+        type='group'
+        collapsed='1'
+    />
+    <cms:repeatable name='tool_params' label='&nbsp;' group='tool_params_group'>
+        <cms:editable
+            name='tool_param_name'
+            label='Parametro vardas'
+            type='text'
+        />
+        <cms:editable
+            name='tool_param_value'
+            label='Parametras'
+            type='text'
+        />
+    </cms:repeatable>
+    
+    <cms:editable
+        name='tool_service_log_group'
+        label='Atlikti priežiūros darbai'
+        type='group'
+        collapsed='1'
+    />
+    <cms:repeatable name='tool_service_log' label='&nbsp;' group='tool_service_log_group'>
+        <cms:editable
+            name='tool_service_job'
+            type='richtext'
+        />
+    </cms:repeatable>
 </cms:template>
 
 <cms:embed 'head.php' />
