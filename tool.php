@@ -1,5 +1,13 @@
 <?php require_once( 'couch/cms.php' ); ?>
 <cms:template title='Įrankiai' clonable='1'>
+    <cms:config_list_view orderby='weight' order='asc' exclude='default-page'>
+        <cms:field 'k_selector_checkbox' />
+        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'k_page_date' />
+        <cms:field 'k_up_down' />
+        <cms:field 'k_actions' />
+    </cms:config_list_view>
+
     <cms:editable
         name='tool_barcode'
         label='Barkodas'
