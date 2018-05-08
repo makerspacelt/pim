@@ -1,1 +1,3 @@
-couch
+couch/*
+couch/snippets/.htaccess
+!couch/snippets
