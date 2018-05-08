@@ -13,6 +13,15 @@
     />
     
     <cms:editable
+        name='tool_photos'
+        label='Nuotraukos'
+        type='reverse_relation'
+        masterpage='gallery.php'
+        field='tool_img_gallery'
+        anchor_text='Peržiūrėti nuotraukas'
+    />
+    
+    <cms:editable
         name='tool_info_group'
         label='Papildoma informacija'
         type='group'
