@@ -30,6 +30,13 @@
     />
     
     <cms:editable
+        name='tool_tags'
+        label='Etiketės'
+        type='relation'
+        masterpage='tags.php'
+    />
+    
+    <cms:editable
         name='tool_info_group'
         label='Papildoma informacija'
         type='group'
