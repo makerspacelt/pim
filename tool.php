@@ -18,7 +18,7 @@
     <cms:editable
         name='tool_desc'
         label='Aprašymas'
-        type='nicedit'
+        type='textarea'
         order='2'
     />
     
@@ -96,7 +96,7 @@
     <cms:repeatable name='tool_service_log' label='&nbsp;' group='tool_service_log_group'>
         <cms:editable
             name='tool_service_job'
-            type='richtext'
+            type='textarea'
         />
     </cms:repeatable>
 </cms:template>
