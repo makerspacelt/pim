@@ -12,12 +12,14 @@
         name='tool_barcode'
         label='Barkodas'
         type='text'
+        order='1'
     />
     
     <cms:editable
         name='tool_desc'
         label='Aprašymas'
         type='nicedit'
+        order='2'
     />
     
     <cms:editable
@@ -27,6 +29,7 @@
         masterpage='gallery.php'
         field='tool_img_gallery'
         anchor_text='Peržiūrėti nuotraukas'
+        order='3'
     />
     
     <cms:editable
@@ -34,6 +37,7 @@
         label='Etiketės'
         type='relation'
         masterpage='tags.php'
+        order='4'
     />
     
     <cms:editable
@@ -41,6 +45,7 @@
         label='Papildoma informacija'
         type='group'
         collapsed='1'
+        order='5'
     />
     <cms:editable
         name='tool_shop_links'
@@ -60,6 +65,7 @@
         label='Parametrai'
         type='group'
         collapsed='1'
+        order='6'
     />
     <cms:repeatable name='tool_params' label='&nbsp;' group='tool_params_group'>
         <cms:editable
@@ -79,6 +85,7 @@
         label='Atlikti priežiūros darbai'
         type='group'
         collapsed='1'
+        order='7'
     />
     <cms:repeatable name='tool_service_log' label='&nbsp;' group='tool_service_log_group'>
         <cms:editable
