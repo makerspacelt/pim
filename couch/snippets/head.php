@@ -13,6 +13,10 @@
 
         <!-- Custom styles for this template -->
         <link href="<cms:show k_site_link />css/main.css" rel="stylesheet">
+        
+        <!-- Favikonos rodymas -->
+        <link rel="shortcut icon" href="<cms:get_custom_field var='site_favicon' masterpage='index.php' />" type="image/x-icon">
+        <link rel="icon" href="<cms:get_custom_field var='site_favicon' masterpage='index.php' />" type="image/x-icon">
     </head>
 
     <body>
