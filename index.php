@@ -22,113 +22,40 @@
 <cms:embed 'head.php' />
 <cms:embed 'header.php' />
 <div class="container">
-  <div class="row">
+    <div class="row">
     <cms:embed 'sidebar.php' />
-    <div class="col-lg-9">
-      <div class="row my-4">
-      
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item One</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    
+        <div class="col-lg-9">
+            <div class="row my-4">
+                <cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page'>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <a href="<cms:show k_page_link />">
+                            <cms:if "<cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />">
+                                <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' limit='1' orderby='weight' order='asc'>
+                                    <img class="card-img-top" src="<cms:show gg_image />" alt="árankio nuotrauka">
+                                </cms:reverse_related_pages>
+                            <cms:else />
+                                <img class="card-img-top" src="http://placehold.it/700x400" alt="árankio nuotrauka">
+                            </cms:if>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title tool-listing-title"><a href="<cms:show k_page_link />"><cms:show k_page_title /></a></h5>
+                            <h6 class="card-subtitle mb-3 text-muted"><cms:show tool_barcode /></h6>
+                            <p class="card-text"><cms:show tool_desc /></p>
+                        </div>
+                        <div class="card-footer">
+                            <cms:related_pages field='tool_tags'>
+                                <a href="<cms:show k_page_link />"><small class="text-muted">#<cms:show k_page_title /></small></a>
+                            </cms:related_pages>
+                        </div>
+                    </div>
+                </div>
+                </cms:pages>
             </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Two</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Three</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Four</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Five</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Item Six</a>
-              </h4>
-              <h5>$24.99</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!-- /.row -->
     </div>
-    <!-- /.col-lg-9 -->
-  </div>
-  <!-- /.row -->
+    <!-- /.row -->
 </div>
 <cms:embed 'foot.php' />
 <?php COUCH::invoke(); ?>

@@ -8,6 +8,15 @@ body {
   padding-top: 54px;
 }
 
+span.tool-listing-title {
+    font-size: 20px;
+}
+
+span.tool-listing-subtitle {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
