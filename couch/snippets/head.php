@@ -5,8 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-
-        <title><cms:get_custom_field var='site_title' masterpage='index.php' /></title>
+        
+        <cms:capture into='cur_site_title'>
+            <cms:get_custom_field var='site_title' masterpage='index.php' />
+        </cms:capture>
+        <cms:if "<cms:not_empty cur_site_title />">
+            <title><cms:show cur_site_title /></title>
+        </cms:if>
 
         <!-- Bootstrap core CSS -->
         <link href="<cms:show k_site_link />vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -15,8 +20,13 @@
         <link href="<cms:show k_site_link />css/main.css" rel="stylesheet">
         
         <!-- Favikonos rodymas -->
-        <link rel="shortcut icon" href="<cms:get_custom_field var='site_favicon' masterpage='index.php' />" type="image/x-icon">
-        <link rel="icon" href="<cms:get_custom_field var='site_favicon' masterpage='index.php' />" type="image/x-icon">
+        <cms:capture into='cur_site_favicon'>
+            <cms:get_custom_field var='site_favicon' masterpage='index.php' />
+        </cms:capture>
+        <cms:if "<cms:not_empty cur_site_favicon />">
+            <link rel="shortcut icon" href="<cms:show cur_site_favicon />" type="image/x-icon">
+            <link rel="icon" href="<cms:show cur_site_favicon />" type="image/x-icon">
+        </cms:if>
     </head>
 
     <body>
