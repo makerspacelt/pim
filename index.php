@@ -33,10 +33,10 @@
                         <a href="<cms:show k_page_link />">
                             <cms:if "<cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />">
                                 <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' limit='1' orderby='weight' order='asc'>
-                                    <img class="card-img-top" src="<cms:show gg_image />" alt="árankio nuotrauka">
+                                    <img class="card-img-top" src="<cms:show gg_image />" alt="Ä¯rankio nuotrauka">
                                 </cms:reverse_related_pages>
                             <cms:else />
-                                <img class="card-img-top" src="http://placehold.it/700x400" alt="árankio nuotrauka">
+                                <img class="card-img-top" src="http://placehold.it/700x400" alt="Ä¯rankio nuotrauka">
                             </cms:if>
                         </a>
                         <div class="card-body">
