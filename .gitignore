@@ -6,3 +6,9 @@ couch/snippets/.htaccess
 !couch/addons
 couch/addons/*
 !couch/addons/kfunctions.php
+
+!couch/includes
+couch/includes/*
+!couch/includes/plupload
+couch/includes/plupload/*
+!couch/includes/plupload/upload.php

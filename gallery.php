@@ -8,9 +8,11 @@
     <cms:editable
         name='gg_image'
         label='Nuotrauka'
-        width='500'
+        width='1500'
+        quality='80'
         show_previews='1'
         preview_height='200'
+        enforce_max='1'
         type='image'
     />
     
