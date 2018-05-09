@@ -6,7 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title><cms:show site_title /></title>
+        <title><cms:get_custom_field var='site_title' masterpage='index.php' /></title>
 
         <!-- Bootstrap core CSS -->
         <link href="<cms:show k_site_link />vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
