@@ -17,6 +17,11 @@ span.tool-listing-subtitle {
     margin-bottom: 20px;
 }
 
+.tool-listing-text {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
