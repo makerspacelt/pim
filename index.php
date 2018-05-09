@@ -46,7 +46,7 @@
                         </div>
                         <div class="card-footer">
                             <cms:related_pages field='tool_tags'>
-                                <a href="<cms:show k_page_link />"><small class="text-muted">#<cms:show k_page_title /></small></a>
+                                <a href="<cms:show k_page_link />"><small class="text-muted"><nobr>#<cms:show k_page_name /></nobr></small></a>
                             </cms:related_pages>
                         </div>
                     </div>
