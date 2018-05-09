@@ -17,7 +17,7 @@
         <h5 class="card-header">Etikečių debesis</h5>
         <div class="my-2 mx-3">
         <cms:pages masterpage='tags.php' custom_field='tool.php::tool_tags=ANY' >
-            <a href="<cms:show k_page_link />">#<cms:show k_page_title /></a>
+            <a href="<cms:show k_page_link />"><nobr>#<cms:show k_page_name /></nobr></a>
         </cms:pages>
         </div>
     </div>
