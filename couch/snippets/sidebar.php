@@ -4,7 +4,7 @@
     <h5 class="card-header">Paieška</h5>
         <div class="card-body">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="">
+                <input type="text" class="form-control" autofocus placeholder="">
                 <div class="input-group-append">
                     <button class="btn btn-secondary" type="button">Ieškoti</button>
                 </div>
