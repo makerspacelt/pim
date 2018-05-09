@@ -35,4 +35,7 @@
         no_gui='1'
     />
 </cms:template>
+
+<cms:redirect url="<cms:link masterpage='index.php' />" permanently='1' />
+
 <?php COUCH::invoke(); ?>
