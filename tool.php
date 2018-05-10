@@ -113,7 +113,7 @@
         <cms:capture into='toolImgCount'>
             <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />
         </cms:capture>
-        <cms:if toolImgCount>
+        <cms:if "<cms:show toolImgCount />">
             <div id="toolCarouselIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <cms:repeat count=toolImgCount startCount='0'>
@@ -137,7 +137,7 @@
                 </div>
             </div>
         <cms:else />
-            <img class="card-img-top img-fluid" src="<cms:show k_site_link />/images/defaut-tool-pic.png" alt="įrankio foto">
+            <img class="card-img-top img-fluid" src="<cms:show k_site_link />/images/default-tool-pic.png" alt="įrankio foto">
         </cms:if>
         <div class="card-body">
           <h3 class="card-title"><cms:show k_page_title /></h3>

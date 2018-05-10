@@ -50,7 +50,7 @@
                                     <img class="card-img-top" src="<cms:show gg_image />" alt="įrankio nuotrauka">
                                 </cms:reverse_related_pages>
                             <cms:else />
-                                <img class="card-img-top" src="<cms:show k_site_link />/images/defaut-tool-pic-listing.png" alt="įrankio nuotrauka">
+                                <img class="card-img-top" src="<cms:show k_site_link />/images/default-tool-pic-listing.png" alt="įrankio nuotrauka">
                             </cms:if>
                         </a>
                         <div class="card-body">
