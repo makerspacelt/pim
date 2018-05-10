@@ -166,6 +166,39 @@
       <!-- /.card -->
 
       <div class="card card-outline-secondary my-4">
+        <div class="card-header">Parametrai</div>
+        <div class="card-body">
+            <cms:set show_buffer='0' 'global' />
+            <cms:capture into='tool_params_buffer'>
+                <table class="table" style="margin-bottom: 0">
+                    <thead>
+                        <tr>
+                            <th>Parametro vardas</th>
+                            <th>Parametras</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <cms:show_repeatable 'tool_params'>
+                    <cms:if "<cms:not_empty tool_param_name />">
+                        <cms:set show_buffer='1' 'global' />
+                        <tr>
+                            <td><cms:show tool_param_name /></td>
+                            <td><cms:show tool_param_value /></td>
+                        </tr>
+                    </cms:if>
+                </cms:show_repeatable>
+                    </tbody>
+                </table>
+            </cms:capture>
+            <cms:if show_buffer>
+                <cms:show tool_params_buffer />
+            <cms:else />
+                Parametrų nėra
+            </cms:if>
+        </div>
+      </div>
+      
+      <div class="card card-outline-secondary my-4">
         <div class="card-header">
           Product Reviews
         </div>
