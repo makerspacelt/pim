@@ -144,19 +144,21 @@
           <h5 class="card-subtitle mb-3 text-muted"><cms:show tool_barcode /></h5>
           <p class="card-text"><cms:show tool_desc /></p>
           <p class="card-text">
-            <b>Kur galima įsigyti?</b><br/>
-            <div class="tool-links">
-                <cms:php>
-                    $urlArr = explode("\n", "<cms:show tool_shop_links />");
-                    foreach ($urlArr as $url) {
-                        if (preg_match('#(?xi)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`\!()\[\]{};:\'".,<>?«»“”‘’]))#i', $url)) {
-                            echo sprintf('<a href="%1$s" target="_blank">%1$s</a><br/>', $url);
-                        } else {
-                            echo $url.'<br/>';
+            <cms:if "<cms:not_empty tool_shop_links />">
+                <b>Kur galima įsigyti?</b><br/>
+                <div class="tool-links">
+                    <cms:php>
+                        $urlArr = explode("\n", "<cms:show tool_shop_links />");
+                        foreach ($urlArr as $url) {
+                            if (preg_match('#(?xi)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`\!()\[\]{};:\'".,<>?«»“”‘’]))#i', $url)) {
+                                echo sprintf('<a href="%1$s" target="_blank">%1$s</a><br/>', $url);
+                            } else {
+                                echo $url.'<br/>';
+                            }
                         }
-                    }
-                </cms:php>
-            </div>
+                    </cms:php>
+                </div>
+            </cms:if>
           </p>
           <p class="card-text">
             <cms:if "<cms:not_empty tool_date />">
