@@ -104,14 +104,41 @@
 <cms:embed 'head.php' />
 <cms:embed 'header.php' />
 <div class="container">
-
   <div class="row">
     <cms:embed 'sidebar.php' />
 
     <div class="col-lg-9">
 
       <div class="card mt-4">
-        <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+        <cms:capture into='toolImgCount'>
+            <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />
+        </cms:capture>
+        <cms:if toolImgCount>
+            <div id="toolCarouselIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <cms:repeat count=toolImgCount startCount='0'>
+                        <li data-target="#toolCarouselIndicators" data-slide-to="<cms:show k_count />" <cms:if k_count eq '0'>class="active"</cms:if>></li>
+                    </cms:repeat>
+                </ol>
+                <div class="carousel-inner">
+                    <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' orderby='weight' order='asc'>
+                        <div class="carousel-item item <cms:if k_count eq '1'>active</cms:if>">
+                            <img class="d-block w-100" src="<cms:show gg_image />?auto=yes">
+                        </div>
+                    </cms:reverse_related_pages>
+                    <a class="carousel-control-prev" href="#toolCarouselIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Praeitas</span>
+                    </a>
+                    <a class="carousel-control-next" href="#toolCarouselIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Sekantis</span>
+                    </a>
+                </div>
+            </div>
+        <cms:else />
+            <img class="card-img-top img-fluid" src="<cms:show k_site_link />/images/defaut-tool-pic.png" alt="įrankio foto">
+        </cms:if>
         <div class="card-body">
           <h3 class="card-title">Product Name</h3>
           <h4>$24.99</h4>
@@ -145,7 +172,6 @@
     <!-- /.col-lg-9 -->
 
   </div>
-
 </div>
 <cms:embed 'foot.php' />
 <?php COUCH::invoke(); ?>
