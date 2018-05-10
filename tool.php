@@ -159,7 +159,12 @@
             </div>
           </p>
           <p class="card-text">
-            Įsigyta <cms:show tool_date />, Originali kaina <cms:show tool_price /> &euro;
+            <cms:if "<cms:not_empty tool_date />">
+                Įsigyta <cms:show tool_date /><br/>
+            </cms:if>
+            <cms:if "<cms:not_empty tool_price />">
+                Originali kaina <cms:show tool_price /> &euro;
+            </cms:if>
           </p>
         </div>
       </div>
