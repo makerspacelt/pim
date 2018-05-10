@@ -199,20 +199,25 @@
       </div>
       
       <div class="card card-outline-secondary my-4">
-        <div class="card-header">
-          Product Reviews
-        </div>
+        <div class="card-header">Atlikti priežiūros darbai</div>
         <div class="card-body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-          <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-          <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-          <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-          <hr>
-          <a href="#" class="btn btn-success">Leave a Review</a>
+          <cms:set show_buffer='0' 'global' />
+          <cms:capture into='tool_service_log_buffer'>
+            <cms:show_repeatable 'tool_service_log'>
+                <cms:if "<cms:not_empty tool_service_job />">
+                    <cms:set show_buffer='1' 'global' />
+                    <p><cms:show tool_service_job /></p>
+                    <cms:if k_count ne k_total_records>
+                        <hr/>
+                    </cms:if>
+                </cms:if>
+            </cms:show_repeatable>
+          </cms:capture>
+          <cms:if show_buffer>
+              <cms:show tool_service_log_buffer />
+          <cms:else />
+              Įrankis dar netaisytas
+          </cms:if>
         </div>
       </div>
       <!-- /.card -->
