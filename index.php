@@ -1,5 +1,5 @@
 <?php require_once( 'couch/cms.php' ); ?>
-<cms:template title='Pagrindinis'>
+<cms:template title='Pagrindinis' order='0'>
     <cms:editable
         name='site_logo'
         label='Puslapio logo'

@@ -1,5 +1,5 @@
 <?php require_once( 'couch/cms.php' ); ?>
-<cms:template title='Įrankiai' clonable='1'>
+<cms:template title='Įrankiai' clonable='1' order='1'>
     <cms:config_list_view orderby='weight' order='asc' exclude='default-page'>
         <cms:field 'k_selector_checkbox' />
         <cms:field 'k_page_title' sortable='0' />
