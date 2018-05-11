@@ -147,7 +147,7 @@
         <div class="card-body">
           <h3 class="card-title"><cms:show k_page_title /></h3>
           <h5 class="card-subtitle mb-3 text-muted"><cms:show tool_barcode /></h5>
-          <p class="card-text"><cms:show tool_desc /></p>
+          <p class="card-text"><cms:nl2br><cms:show tool_desc /></cms:nl2br></p>
           <p class="card-text">
             <cms:if "<cms:not_empty tool_shop_links />">
                 <b>Kur galima įsigyti?</b><br/>
@@ -218,7 +218,7 @@
             <cms:show_repeatable 'tool_service_log'>
                 <cms:if "<cms:not_empty tool_service_job />">
                     <cms:set show_buffer='1' 'global' />
-                    <p><cms:show tool_service_job /></p>
+                    <p><cms:nl2br><cms:show tool_service_job /></cms:nl2br></p>
                     <cms:if k_count ne k_total_records>
                         <hr/>
                     </cms:if>
