@@ -14,10 +14,10 @@
         </cms:if>
 
         <!-- Bootstrap core CSS -->
-        <link href="<cms:show k_site_link />vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="<cms:show k_site_link />css/main.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
         
         <!-- Favikonos rodymas -->
         <cms:capture into='cur_site_favicon'>

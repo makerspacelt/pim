@@ -19,6 +19,7 @@
         name='tool_desc'
         label='Aprašymas'
         type='textarea'
+        required='1'
         order='2'
     />
     
@@ -101,6 +102,10 @@
     </cms:repeatable>
 </cms:template>
 
+<cms:if k_is_page ne '1'>
+    <cms:redirect url="<cms:link masterpage='index.php' />" />
+</cms:if>
+
 <cms:embed 'head.php' />
 <cms:embed 'header.php' />
 <div class="container">
@@ -137,7 +142,7 @@
                 </div>
             </div>
         <cms:else />
-            <img class="card-img-top img-fluid" src="<cms:show k_site_link />/images/default-tool-pic.png" alt="įrankio foto">
+            <img class="card-img-top img-fluid" src="images/default-tool-pic.png" alt="įrankio foto">
         </cms:if>
         <div class="card-body">
           <h3 class="card-title"><cms:show k_page_title /></h3>
