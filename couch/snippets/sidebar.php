@@ -3,12 +3,23 @@
     <div class="card my-4">
     <h5 class="card-header">Paieška</h5>
         <div class="card-body">
-            <div class="input-group">
-                <input type="text" class="form-control" autofocus placeholder="">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button">Ieškoti</button>
+            <cms:form method="post" name="search_tools">
+                <cms:if k_success>
+                    <cms:search keywords=frm_search_input masterpage='tool.php'>
+                        <cms:if k_count eq '1'>
+                            <cms:redirect url=k_page_link permanently='1' />
+                        </cms:if>
+                    </cms:search>
+                
+                    <cms:set search_term=frm_search_input scope='global' />
+                </cms:if>
+                <div class="input-group">
+                    <cms:input name="search_input" type="text" class="form-control" autofocus required='1' />
+                    <div class="input-group-append">
+                        <cms:input class="btn btn-secondary" name="submit" type="submit" value="Ieškoti" />
+                    </div>
                 </div>
-            </div>
+            </cms:form>
         </div>
     </div>
   

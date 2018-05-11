@@ -38,9 +38,13 @@
 <div class="container">
     <div class="row">
     <cms:embed 'sidebar.php' />
-    
+
         <div class="col-lg-9">
             <div class="row my-4">
+                <cms:search keywords="<cms:show search_term />">
+                    <cms:dump/>
+                </cms:search>
+            
                 <cms:set toolTag="<cms:gpc 'tag' method='get' />" />
                 <cms:capture into='toolTagPageCount'>
                     <cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page' custom_field="tool_tags=<cms:show toolTag />" count_only='1' />
