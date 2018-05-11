@@ -6,4 +6,5 @@
         <cms:field 'k_actions' />
     </cms:config_list_view>
 </cms:template>
+<cms:redirect url="<cms:link masterpage='index.php' />" />
 <?php COUCH::invoke(); ?>
