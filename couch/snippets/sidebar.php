@@ -3,15 +3,15 @@
     <div class="card my-4">
     <h5 class="card-header">Paieška</h5>
         <div class="card-body">
-            <cms:form method="post" name="search_tools">
+            <cms:form method="post" name="search_tools" anchor='0'>
                 <cms:if k_success>
-                    <cms:search keywords=frm_search_input masterpage='tool.php'>
-                        <cms:if k_count eq '1'>
-                            <cms:redirect url=k_page_link permanently='1' />
-                        </cms:if>
-                    </cms:search>
-                
-                    <cms:set search_term=frm_search_input scope='global' />
+                    <cms:capture into='searchCount'>
+                        <cms:search keywords=frm_search_input masterpage='tool.php' count_only='1' />
+                    </cms:capture>
+                    <cms:if "<cms:show searchCount />">
+                        asasa
+                    </cms:if>
+                    
                 </cms:if>
                 <div class="input-group">
                     <cms:input name="search_input" type="text" class="form-control" autofocus required='1' />
