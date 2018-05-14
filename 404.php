@@ -1,5 +1,5 @@
 <?php require_once( 'couch/cms.php' ); ?>
-<cms:template name='404' title='Klaida 404' hidden='1'>
+<cms:template name='404' title='Klaida 404' hidden='1' order='100'>
 </cms:template>
 
 <cms:embed 'head.php' />

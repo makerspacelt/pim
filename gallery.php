@@ -1,5 +1,5 @@
 <?php require_once( 'couch/cms.php' ); ?>
-<cms:template title='Galerija' clonable='1' gallery='1'>
+<cms:template title='Galerija' clonable='1' gallery='1' order='3'>
     <cms:config_list_view orderby='weight' order='asc' exclude='default-page'>
         <cms:field 'k_up_down' />
         <cms:field 'k_page_title' sortable='0' />

@@ -3,12 +3,23 @@
     <div class="card my-4">
     <h5 class="card-header">Paieška</h5>
         <div class="card-body">
-            <div class="input-group">
-                <input type="text" class="form-control" autofocus placeholder="">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary" type="button">Ieškoti</button>
+            <cms:form method="post" name="search_tools" anchor='0'>
+                <cms:if k_success>
+                    <cms:capture into='searchCount'>
+                        <cms:search keywords=frm_search_input masterpage='tool.php' count_only='1' />
+                    </cms:capture>
+                    <cms:if "<cms:show searchCount />">
+                        asasa
+                    </cms:if>
+                    
+                </cms:if>
+                <div class="input-group">
+                    <cms:input name="search_input" type="text" class="form-control" autofocus required='1' />
+                    <div class="input-group-append">
+                        <cms:input class="btn btn-secondary" name="submit" type="submit" value="Ieškoti" />
+                    </div>
                 </div>
-            </div>
+            </cms:form>
         </div>
     </div>
   
@@ -16,8 +27,9 @@
     <div class="card my-4">
         <h5 class="card-header">Etikečių debesis</h5>
         <div class="my-2 mx-3">
+        <cms:set listingTemplateUrl="<cms:link 'index.php' />" />
         <cms:pages masterpage='tags.php' custom_field='tool.php::tool_tags=ANY' >
-            <a href="<cms:show k_page_link />"><nobr>#<cms:show k_page_name /></nobr></a>
+            <a href="<cms:add_querystring listingTemplateUrl "tag=<cms:show k_page_name />" />" /><nobr>#<cms:show k_page_name /></nobr></a>
         </cms:pages>
         </div>
     </div>
