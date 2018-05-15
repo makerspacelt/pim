@@ -8,10 +8,6 @@
                     <cms:capture into='searchCount'>
                         <cms:search keywords=frm_search_input masterpage='tool.php' count_only='1' />
                     </cms:capture>
-                    <cms:if "<cms:show searchCount />">
-                        asasa
-                    </cms:if>
-                    
                 </cms:if>
                 <div class="input-group">
                     <cms:input name="search_input" type="text" class="form-control" autofocus required='1' />
