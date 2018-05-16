@@ -6,9 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         
-        <cms:capture into='cur_site_title'>
-            <cms:get_custom_field var='site_title' masterpage='index.php' />
-        </cms:capture>
+        <cms:set cur_site_title="<cms:get_custom_field var='site_title' masterpage='index.php' />" />
         <cms:if "<cms:not_empty cur_site_title />">
             <title><cms:show cur_site_title /></title>
         </cms:if>
@@ -20,9 +18,7 @@
         <link href="css/main.css" rel="stylesheet">
         
         <!-- Favikonos rodymas -->
-        <cms:capture into='cur_site_favicon'>
-            <cms:get_custom_field var='site_favicon' masterpage='index.php' />
-        </cms:capture>
+        <cms:set cur_site_favicon="<cms:get_custom_field var='site_favicon' masterpage='index.php' />" />
         <cms:if "<cms:not_empty cur_site_favicon />">
             <link rel="shortcut icon" href="<cms:show cur_site_favicon />" type="image/x-icon">
             <link rel="icon" href="<cms:show cur_site_favicon />" type="image/x-icon">

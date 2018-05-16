@@ -115,9 +115,7 @@
     <div class="col-lg-9">
 
       <div class="card mt-4">
-        <cms:capture into='toolImgCount'>
-            <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />
-        </cms:capture>
+        <cms:set toolImgCount="<cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />" />
         <cms:if "<cms:show toolImgCount />">
             <div id="toolCarouselIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
