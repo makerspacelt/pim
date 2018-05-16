@@ -40,12 +40,16 @@
     <cms:embed 'sidebar.php' />
         <div class="col-lg-9">
             <div class="row my-4">
-                <cms:set searchTerm="<cms:gpc 'search_input' method='post' />" />
+                <cms:set searchTerm="<cms:gpc 'search_input' method='post' default='' />" />
                 <cms:if "<cms:not_empty searchTerm />">
                     <cms:search masterpage='tool.php' keywords=searchTerm>
                         <cms:embed 'tool_card.php' />
                         <cms:no_results>
-                            nieko nerasta
+                            <div class="col-lg-12">
+                                <h4 class="alert alert-info text-center">
+                                    Nieko nerasta pagal užklausą
+                                </h4>
+                            </div>
                         </cms:no_results>
                     </cms:search>
                 <cms:else />
