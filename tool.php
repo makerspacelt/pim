@@ -59,6 +59,7 @@
         label='Kaina'
         type='text'
         group='tool_info_group'
+        validator='non_negative_decimal'
     />
     <cms:editable
         name='tool_date'
