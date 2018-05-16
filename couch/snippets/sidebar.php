@@ -5,7 +5,7 @@
         <div class="card-body">
             <cms:form method="post" name="search_tools" action="index.php" anchor='0'>
                 <div class="input-group">
-                    <cms:input name="search_input" type="text" class="form-control" autofocus required='1' />
+                    <cms:input name="search_input" type="text" class="form-control" autofocus="1" required='1' />
                     <div class="input-group-append">
                         <cms:input class="btn btn-secondary" name="submit" type="submit" value="Ieškoti" />
                     </div>
