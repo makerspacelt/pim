@@ -66,11 +66,9 @@
                     <cms:if "<cms:show searchCount />">
                         asasa
                     <cms:else />
-                        <div class="col-lg-12">
-                            <h4 class="alert alert-info text-center">
-                                Nieko nerasta pagal užklausą
-                            </h4>
-                        </div>
+                        <cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page'>
+                            <cms:embed 'tool_card.php' />
+                        </cms:pages>
                     </cms:if>
                 </cms:if>
             </div>
