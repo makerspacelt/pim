@@ -16,7 +16,7 @@
         </div>
         <div class="card-footer">
             <cms:related_pages field='tool_tags'>
-                <a href="<cms:add_querystring listingTemplateUrl "tag=<cms:show k_page_name />" />"><small class="text-muted"><nobr>#<cms:show k_page_name /></nobr></small></a>
+                <a href="<cms:add_querystring k_template_link "t=<cms:show k_page_name />" />"><small class="text-muted"><nobr>#<cms:show k_page_name /></nobr></small></a>
             </cms:related_pages>
         </div>
     </div>

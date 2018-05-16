@@ -6,5 +6,21 @@
         <cms:field 'k_actions' />
     </cms:config_list_view>
 </cms:template>
-<cms:redirect url="<cms:link masterpage='index.php' />" />
+
+<cms:embed 'head.php' />
+<cms:embed 'header.php' />
+<div class="container">
+    <div class="row">
+    <cms:embed 'sidebar.php' />
+        <div class="col-lg-9">
+            <div class="row my-4">
+                <cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page' custom_field="tool_tags=<cms:gpc 't' method='get' default='' />">
+                    <cms:embed 'tool_card.php' />
+                </cms:pages>
+            </div>
+        </div>
+    </div>
+</div>
+<cms:embed 'foot.php' />
+
 <?php COUCH::invoke(); ?>
