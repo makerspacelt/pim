@@ -21,7 +21,7 @@
         <cms:set tagCount="<cms:pages masterpage='tags.php' custom_field='tool.php::tool_tags=ANY' count_only='1' />" />
         <cms:if "<cms:show tagCount />">
             <cms:pages masterpage='tags.php' custom_field='tool.php::tool_tags=ANY'>
-                <a href="<cms:add_querystring k_template_link "t=<cms:show k_page_name />" />" /><nobr>#<cms:show k_page_name /></nobr></a>
+                <a href="<cms:add_querystring k_template_link "t=<cms:show k_page_name />" />"><nobr>#<cms:show k_page_name /></nobr></a>
             </cms:pages>
         <cms:else />
             Panaudotų etikečių kol kas nėra
