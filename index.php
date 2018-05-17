@@ -45,11 +45,7 @@
                     <cms:search masterpage='tool.php' keywords=searchTerm>
                         <cms:embed 'tool_card.php' />
                         <cms:no_results>
-                            <div class="col-lg-12">
-                                <h4 class="alert alert-info text-center">
-                                    Nieko nerasta pagal užklausą
-                                </h4>
-                            </div>
+                            <cms:embed 'nieko_nerasta.php' />
                         </cms:no_results>
                     </cms:search>
                 <cms:else />
