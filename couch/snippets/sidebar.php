@@ -16,7 +16,7 @@
   
     <!-- Kategorijos -->
     <div class="card my-4">
-        <h5 class="card-header">Etikečių debesis</h5>
+        <h5 class="card-header">Etiketės</h5>
         <div class="my-2 mx-3">
             <cms:set tagCount="<cms:pages masterpage='tags.php' custom_field='tool.php::tool_tags=ANY' count_only='1' />" />
             <cms:if tagCount>
@@ -29,7 +29,8 @@
                             </label>
                         </div>
                     </cms:pages>
-                    <cms:input class="btn btn-secondary" name="submit" type="submit" value="Filtruoti" />
+                    <br/>
+                    <cms:input class="btn btn-sm btn-block btn-secondary" name="submit" type="submit" value="Filtruoti" />
                 </cms:form>
             <cms:else />
                 Panaudotų etikečių kol kas nėra
