@@ -51,6 +51,9 @@
                 <cms:else />
                     <cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page'>
                         <cms:embed 'tool_card.php' />
+                        <cms:no_results>
+                            <cms:embed 'nieko_nerasta.php' />
+                        </cms:no_results>
                     </cms:pages>
                 </cms:if>
             </div>
