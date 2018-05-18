@@ -153,16 +153,9 @@
             <cms:if "<cms:not_empty tool_shop_links />">
                 <b>Kur galima įsigyti?</b><br/>
                 <div class="tool-links">
-                    <cms:php>
-                        $urlArr = explode("\n", "<cms:show tool_shop_links />");
-                        foreach ($urlArr as $url) {
-                            if (preg_match('#(?xi)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`\!()\[\]{};:\'".,<>?«»“”‘’]))#i', $url)) {
-                                echo sprintf('<a href="%1$s" target="_blank">%1$s</a><br/>', $url);
-                            } else {
-                                echo $url.'<br/>';
-                            }
-                        }
-                    </cms:php>
+                    <cms:url_detect>
+                        <cms:nl2br><cms:show tool_shop_links /></cms:nl2br>
+                    </cms:url_detect>
                 </div>
             </cms:if>
           </p>

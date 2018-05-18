@@ -6,6 +6,7 @@ couch/snippets/.htaccess
 !couch/addons
 couch/addons/*
 !couch/addons/kfunctions.php
+!couch/addons/url-detect
 
 !couch/includes
 couch/includes/*
