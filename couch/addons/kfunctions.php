@@ -10,6 +10,7 @@ if ( !defined('K_COUCH_DIR') ) die(); // cannot be loaded directly
 //require_once( K_COUCH_DIR.'addons/jcropthumb/jcropthumb.php' );
 
 require_once( K_COUCH_DIR.'addons/url-detect/url-detect.php' );
+require_once( K_COUCH_DIR.'addons/jsonify/jsonify.php' );
 
 // ----- save and back mygtukas -----
 // https://www.couchcms.com/forum/viewtopic.php?f=2&t=10352#p26170
