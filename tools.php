@@ -1,8 +1,16 @@
 <?php require_once( 'couch/cms.php' ); ?>
 
+<cms:if "<cms:not_empty "<cms:gpc 't' method='get' default='' />" />">
+    <cms:set arg="<cms:php>
+            $argArr = explode('|', $_GET['t']);
+            array_walk($argArr, function(&$value, $key) { $value = 'tool_tags='.$value; });
+            echo implode('|', $argArr);
+        </cms:php>" />
+</cms:if>
+
 <cms:content_type 'application/json'/>
 [
-<cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page'>
+<cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page' custom_field="<cms:show arg />">
     {
         "tool_name": "<cms:show k_page_name />",
         "tool_title": <cms:jsonify><cms:show k_page_title /></cms:jsonify>,
