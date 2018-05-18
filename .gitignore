@@ -12,3 +12,7 @@ couch/includes/*
 !couch/includes/plupload
 couch/includes/plupload/*
 !couch/includes/plupload/upload.php
+
+!couch/theme
+couch/theme/*
+!couch/theme/makerspace
