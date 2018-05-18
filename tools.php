@@ -35,6 +35,16 @@
                     <cms:jsonify><cms:show tool_service_job /></cms:jsonify><cms:if k_count ne k_total_records>,</cms:if>
                 </cms:if>
             </cms:show_repeatable>
+        ],
+        "tool_tags": [
+            <cms:related_pages field='tool_tags'>
+                "<cms:show k_page_name />"<cms:if k_count ne k_total_records>,</cms:if>
+            </cms:related_pages>
+        ],
+        "tool_photos": [
+            <cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' orderby='weight' order='asc'>
+                "<cms:show gg_image />"<cms:if k_count ne k_total_records>,</cms:if>
+            </cms:reverse_related_pages>
         ]
     }<cms:if "<cms:not k_paginated_bottom />">,</cms:if>
 </cms:pages>
