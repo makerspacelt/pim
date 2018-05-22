@@ -69,7 +69,7 @@
             label='Įsigyjimo data'
             desc='datos formatas: yyyy-mm-dd'
             type='text'
-            validator='regex=#\d{4}-\d{2}-\d{2}#'
+            validator='regex=#^\d{4}-\d{2}-\d{2}$#'
             validator_msg='regex=Netinkamas datos formatas!'
             width='155'
             class='col'
