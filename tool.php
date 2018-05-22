@@ -66,7 +66,7 @@
         />
         <cms:editable
             name='tool_date'
-            label='Įsigyjimo data'
+            label='Įsigijimo data'
             desc='datos formatas: yyyy-mm-dd'
             type='text'
             validator='regex=#^\d{4}-\d{2}-\d{2}$#'
