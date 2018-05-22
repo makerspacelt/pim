@@ -8,6 +8,7 @@ couch/addons/*
 !couch/addons/kfunctions.php
 !couch/addons/url-detect
 !couch/addons/jsonify
+!couch/addons/bootstrap-grid
 
 !couch/includes
 couch/includes/*

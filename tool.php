@@ -55,22 +55,26 @@
         type='textarea'
         group='tool_info_group'
     />
-    <cms:editable
-        name='tool_price'
-        label='Kaina'
-        type='text'
-        group='tool_info_group'
-        validator='non_negative_decimal'
-    />
-    <cms:editable
-        name='tool_date'
-        label='Įsigyjimo data'
-        desc='datos formatas: yyyy-mm-dd'
-        type='text'
-        group='tool_info_group'
-        validator='regex=#\d{4}-\d{2}-\d{2}#'
-        validator_msg='regex=Netinkamas datos formatas!'
-    />
+    <cms:editable name='tool_aux_data_1' type='row' group='tool_info_group'>
+        <cms:editable
+            name='tool_price'
+            label='Kaina'
+            type='text'
+            validator='non_negative_decimal'
+            width='155'
+            class='col-xs-2'
+        />
+        <cms:editable
+            name='tool_date'
+            label='Įsigyjimo data'
+            desc='datos formatas: yyyy-mm-dd'
+            type='text'
+            validator='regex=#\d{4}-\d{2}-\d{2}#'
+            validator_msg='regex=Netinkamas datos formatas!'
+            width='155'
+            class='col-xs-2'
+        />
+    </cms:editable>
     
     <cms:editable
         name='tool_params_group'
