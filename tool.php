@@ -1,5 +1,6 @@
 <?php require_once( 'couch/cms.php' ); ?>
 <cms:template title='Įrankiai' clonable='1' order='1'>
+    <!---------------------------------------------------->
     <cms:config_list_view orderby='weight' order='asc' exclude='default-page' searchable='1'>
         <cms:field 'k_selector_checkbox' />
         <cms:field 'k_page_title' sortable='0' group='tool_main_group' />
@@ -7,18 +8,20 @@
         <cms:field 'k_up_down' />
         <cms:field 'k_actions' />
     </cms:config_list_view>
-    
+    <!---------------------------------------------------->
     <cms:editable
         name='tool_main_info_group'
         label='Pagrindinė informacija'
         type='group'
         collapsed='0'
-        order='0'
+        order='1'
     />
+    
     <cms:config_form_view>
         <cms:field 'k_page_title' label='Įrankio pavadinimas ir modelis' group='tool_main_info_group' />
         <cms:field 'k_page_name' label='Įrankio vidinis pavadinimas' desc='palikti tuščią kad naudoti sugeneruotą sistemos' group='tool_main_info_group' />
     </cms:config_form_view>
+    
     <cms:editable
         name='tool_barcode'
         label='Barkodas'
@@ -26,6 +29,7 @@
         order='1'
         group='tool_main_info_group'
     />
+    
     <cms:editable
         name='tool_desc'
         label='Aprašymas'
@@ -35,6 +39,7 @@
         order='2'
         group='tool_main_info_group'
     />
+    
     <cms:editable
         name='tool_photos'
         label='Nuotraukos'
@@ -45,6 +50,7 @@
         order='3'
         group='tool_main_info_group'
     />
+    
     <cms:editable
         name='tool_tags'
         label='Etiketės'
@@ -53,21 +59,24 @@
         order='4'
         group='tool_main_info_group'
     />
-    
+    <!---------------------------------------------------->
     <cms:editable
         name='tool_info_group'
         label='Papildoma informacija'
         type='group'
         collapsed='1'
-        order='5'
+        order='2'
     />
+    
     <cms:editable
         name='tool_shop_links'
         label='Kur galima pirkti?'
         type='textarea'
         group='tool_info_group'
+        order='1'
     />
-    <cms:editable name='tool_aux_data_1' type='row' group='tool_info_group'>
+    
+    <cms:editable name='tool_aux_data_1' type='row' group='tool_info_group' order='2'>
         <cms:editable
             name='tool_price'
             label='Kaina'
@@ -87,15 +96,16 @@
             class='col'
         />
     </cms:editable>
-    
+    <!---------------------------------------------------->
     <cms:editable
         name='tool_params_group'
         label='Parametrai'
         type='group'
         collapsed='1'
-        order='6'
+        order='3'
     />
-    <cms:repeatable name='tool_params' label='&nbsp;' group='tool_params_group'>
+    
+    <cms:repeatable name='tool_params' label='&nbsp;' group='tool_params_group' order='1'>
         <cms:editable
             name='tool_param_name'
             label='Parametro vardas'
@@ -107,20 +117,21 @@
             type='text'
         />
     </cms:repeatable>
-    
+    <!---------------------------------------------------->
     <cms:editable
         name='tool_service_log_group'
         label='Atlikti priežiūros darbai'
         type='group'
         collapsed='1'
-        order='7'
+        order='4'
     />
-    <cms:repeatable name='tool_service_log' label='&nbsp;' group='tool_service_log_group'>
+    <cms:repeatable name='tool_service_log' label='&nbsp;' group='tool_service_log_group' order='1'>
         <cms:editable
             name='tool_service_job'
             type='textarea'
         />
     </cms:repeatable>
+    <!---------------------------------------------------->
 </cms:template>
 
 <cms:if k_is_page ne '1'>
