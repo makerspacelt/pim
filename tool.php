@@ -20,6 +20,7 @@
         label='Aprašymas'
         type='textarea'
         required='1'
+        validator_msg='required=Negali būti tuščias!'
         order='2'
     />
     
@@ -68,6 +69,7 @@
         type='text'
         group='tool_info_group'
         validator='regex=#\d{4}-\d{2}-\d{2}#'
+        validator_msg='regex=Netinkamas datos formatas!'
     />
     
     <cms:editable
