@@ -1,6 +1,6 @@
 <?php require_once( 'couch/cms.php' ); ?>
 <cms:template title='Įrankiai' clonable='1' order='1'>
-    <cms:config_list_view orderby='weight' order='asc' exclude='default-page'>
+    <cms:config_list_view orderby='weight' order='asc' exclude='default-page' searchable='1'>
         <cms:field 'k_selector_checkbox' />
         <cms:field 'k_page_title' sortable='0' group='tool_main_group' />
         <cms:field 'k_page_date' />
