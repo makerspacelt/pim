@@ -62,7 +62,7 @@
             type='text'
             validator='non_negative_decimal'
             width='155'
-            class='col-xs-2'
+            class='col'
         />
         <cms:editable
             name='tool_date'
@@ -72,7 +72,7 @@
             validator='regex=#\d{4}-\d{2}-\d{2}#'
             validator_msg='regex=Netinkamas datos formatas!'
             width='155'
-            class='col-xs-2'
+            class='col'
         />
     </cms:editable>
     
