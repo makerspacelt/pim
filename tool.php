@@ -238,7 +238,7 @@
         <div class="card-body">
           <cms:set show_buffer='0' 'global' />
           <cms:capture into='tool_service_log_buffer'>
-            <cms:show_repeatable 'tool_service_log'>
+            <cms:show_repeatable 'tool_service_log' order='desc'>
                 <cms:if "<cms:not_empty tool_service_job />">
                     <cms:set show_buffer='1' 'global' />
                     <p><cms:nl2br><cms:show tool_service_job /></cms:nl2br></p>
