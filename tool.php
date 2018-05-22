@@ -2,19 +2,30 @@
 <cms:template title='Įrankiai' clonable='1' order='1'>
     <cms:config_list_view orderby='weight' order='asc' exclude='default-page'>
         <cms:field 'k_selector_checkbox' />
-        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'k_page_title' sortable='0' group='tool_main_group' />
         <cms:field 'k_page_date' />
         <cms:field 'k_up_down' />
         <cms:field 'k_actions' />
     </cms:config_list_view>
-
+    
+    <cms:editable
+        name='tool_main_info_group'
+        label='Pagrindinė informacija'
+        type='group'
+        collapsed='0'
+        order='0'
+    />
+    <cms:config_form_view>
+        <cms:field 'k_page_title' label='Įrankio pavadinimas ir modelis' group='tool_main_info_group' />
+        <cms:field 'k_page_name' label='Įrankio vidinis pavadinimas' desc='palikti tuščią kad naudoti sugeneruotą sistemos' group='tool_main_info_group' />
+    </cms:config_form_view>
     <cms:editable
         name='tool_barcode'
         label='Barkodas'
         type='text'
         order='1'
+        group='tool_main_info_group'
     />
-    
     <cms:editable
         name='tool_desc'
         label='Aprašymas'
@@ -22,8 +33,8 @@
         required='1'
         validator_msg='required=Negali būti tuščias!'
         order='2'
+        group='tool_main_info_group'
     />
-    
     <cms:editable
         name='tool_photos'
         label='Nuotraukos'
@@ -32,14 +43,15 @@
         field='tool_img_gallery'
         anchor_text='Peržiūrėti nuotraukas'
         order='3'
+        group='tool_main_info_group'
     />
-    
     <cms:editable
         name='tool_tags'
         label='Etiketės'
         type='relation'
         masterpage='tags.php'
         order='4'
+        group='tool_main_info_group'
     />
     
     <cms:editable
