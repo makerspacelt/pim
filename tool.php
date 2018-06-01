@@ -203,13 +203,24 @@
                     QR ir Bar kodo generavimas
                 </div>
                 <div class="card-body">
+                    <button class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#pngQrCode">QR PNG</button>
                     <button class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#textQrCode">QR Text</button>
+                    
+                    <div class="modal fade" id="pngQrCode" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <cms:qrgenerator type='png' />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="modal fade" id="textQrCode" tabindex="-1" role="dialog">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <pre><cms:qrgenerator /></pre>
+                                    <pre><cms:qrgenerator type='text' /></pre>
                                 </div>
                             </div>
                         </div>

@@ -6,11 +6,18 @@
 
 if (!defined('K_COUCH_DIR')) die(); // cannot be loaded directly
 
+require_once('phpqrcode.php');
+
 class QRGenerator_class {
     
     static function qrgenerator($params, $node) {
-        include('phpqrcode.php');
-        return join("\n", QRcode::text('PHP QR Code :)'));
+        if ((count($params) > 0) && ($params[0]['lhs'] == 'type')) {
+            switch ($params[0]['rhs']) {
+                case 'png': return 'shit';
+                case 'text': return join("\n", QRcode::text('PHP QR Code :)'));
+            }
+        }
+        return '';
     }
     
 }
