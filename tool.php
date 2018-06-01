@@ -200,12 +200,21 @@
               <br/>
               <div class="card">
                 <div class="card-header">
-                    QR kodo generavimas
+                    QR ir Bar kodo generavimas
                 </div>
                 <div class="card-body">
-                    <button class="btn btn-secondary" type="submit">PNG</button>
-                    <button class="btn btn-secondary" type="submit">SVG</button>
-                    <button class="btn btn-secondary" type="submit">Text</button>
+                    <button class="btn btn-secondary" type="submit" data-toggle="modal" data-target="#textQrCode">QR Text</button>
+                    
+                    <div class="modal fade" id="textQrCode" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p><cms:qrgenerator /></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
               </div>
           </cms:if>
