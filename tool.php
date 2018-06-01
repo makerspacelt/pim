@@ -196,6 +196,19 @@
                 Originali kaina <cms:show tool_price /> &euro;
             </cms:if>
           </p>
+          <cms:if k_logged_in>
+              <br/>
+              <div class="card">
+                <div class="card-header">
+                    QR kodo generavimas
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-secondary" type="submit">PNG</button>
+                    <button class="btn btn-secondary" type="submit">SVG</button>
+                    <button class="btn btn-secondary" type="submit">Text</button>
+                </div>
+              </div>
+          </cms:if>
         </div>
       </div>
       <!-- /.card -->
