@@ -209,7 +209,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-body">
-                                    <p><cms:qrgenerator /></p>
+                                    <pre><cms:qrgenerator /></pre>
                                 </div>
                             </div>
                         </div>
