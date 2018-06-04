@@ -1,7 +1,6 @@
 <?php
-
 // nustatome konstantas
-define('FONT_FILE', 'FreeMonoBold.ttf');
+define('FONT_FILE', __DIR__.'/FreeMonoBold.ttf');
 define('MARGIN', 10);
 define('TITLE_LEN', 24);
 define('MODEL_LEN', 24);
@@ -29,7 +28,7 @@ $model = (isset($_GET['model'])) ? filter_var(trim($_GET['model']), FILTER_SANIT
 $code = (isset($_GET['code'])) ? filter_var(trim($_GET['code']), FILTER_SANITIZE_STRING) : false;
 $url = (isset($_GET['url'])) ? filter_var(trim($_GET['url']), FILTER_SANITIZE_URL) : false;
 $params = false;
-if (isset($_GET['params']) && (count($_GET['params'] > 0))) {
+if (isset($_GET['params']) && (count($_GET['params']) > 0)) {
     $params = array();
     foreach ($_GET['params'] as $key => $value) {
         $params[$key] = filter_var(trim($value), FILTER_SANITIZE_STRING);
