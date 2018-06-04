@@ -203,7 +203,7 @@
                     Lipduko generavimas
                 </div>
                 <div class="card-body">
-                    
+                    <img src="label-generator/label.php">
                 </div>
               </div>
           </cms:if>
