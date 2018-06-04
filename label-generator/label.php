@@ -1,7 +1,10 @@
 <?php
 
-// mūsų naudojamas šrifto failas
+// nustatome konstantas
 define('FONT_FILE', 'FreeMonoBold.ttf');
+define('MARGIN', 10);
+define('TITLE_LEN', 24);
+define('MODEL_LEN', 24);
 
 // Funkcija kuri sugeneruoja klaidos paveiksliuką
 function generateErrorImg($errorText) {
@@ -32,6 +35,8 @@ if (isset($_GET['params']) && (count($_GET['params'] > 0))) {
         $params[$key] = filter_var(trim($value), FILTER_SANITIZE_STRING);
     }
 }
+
+// apkarpome pavadinimą ir modelį, kad nebūtų per ilgas, ribojam iki 24 simbolių
 
 // patikriname ar bent vienas iš reikiamų parametrų yra tuščias
 // ir jeigu bent vieno trūksta, tai rodome klaidą
