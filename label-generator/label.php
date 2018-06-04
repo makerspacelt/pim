@@ -1,4 +1,7 @@
 <?php
+
+require_once('qrcode.php');
+
 // nustatome konstantas
 define('FONT_FILE', __DIR__.'/FreeMonoBold.ttf');
 define('MARGIN', 10);
@@ -61,11 +64,18 @@ $bg = imagecolorallocate($baseImg, 255, 255, 255); // background'as balta spalva
 $black = imagecolorallocate($baseImg, 0, 0, 0); // tekstas juoda
 
 // pavadinimas ir modelis
-imagettftext($baseImg, 20, 0, 10, 30, $black, FONT_FILE, $title);
-imagettftext($baseImg, 20, 0, 10, 55, $black, FONT_FILE, $model);
-imageline($baseImg, 10, 65, imagesx($baseImg)-10, 65, $black);
+imagettftext($baseImg, 20, 0, MARGIN, 30, $black, FONT_FILE, $title);
+imagettftext($baseImg, 20, 0, MARGIN, 55, $black, FONT_FILE, $model);
+imageline($baseImg, MARGIN, 65, imagesx($baseImg)-MARGIN, 65, $black);
 
-
+// įkeliam QR kodą
+$qr = QRCode::getMinimumQRCode($url, QR_ERROR_CORRECT_LEVEL_L)->createImage(8, 4);
+imagecopyresized(
+    $baseImg, $qr,
+    (imagesx($baseImg)-170)-MARGIN,
+    (imagesy($baseImg)-170)-MARGIN,
+    0, 0, 170, 170, imagesx($qr), imagesy($qr)
+);
 
 header("Content-type: image/png");
 imagepng($baseImg);
