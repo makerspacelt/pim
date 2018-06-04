@@ -37,6 +37,8 @@ if (isset($_GET['params']) && (count($_GET['params'] > 0))) {
 }
 
 // apkarpome pavadinimą ir modelį, kad nebūtų per ilgas, ribojam iki 24 simbolių
+$title = substr($title, 0, TITLE_LEN-1).(strlen($title) > TITLE_LEN-1 ? '~' : '');
+$model = substr($model, 0, MODEL_LEN-1).(strlen($model) > MODEL_LEN-1 ? '~' : '');
 
 // patikriname ar bent vienas iš reikiamų parametrų yra tuščias
 // ir jeigu bent vieno trūksta, tai rodome klaidą
