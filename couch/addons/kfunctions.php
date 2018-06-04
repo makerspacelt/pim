@@ -12,7 +12,6 @@ if ( !defined('K_COUCH_DIR') ) die(); // cannot be loaded directly
 require_once( K_COUCH_DIR.'addons/url-detect/url-detect.php' );
 require_once( K_COUCH_DIR.'addons/jsonify/jsonify.php' );
 require_once( K_COUCH_DIR.'addons/bootstrap-grid/bootstrap-grid.php' );
-require_once( K_COUCH_DIR.'addons/qr-generator/qr-generator.php' );
 
 // ----- save and back mygtukas -----
 // https://www.couchcms.com/forum/viewtopic.php?f=2&t=10352#p26170
