@@ -8,8 +8,13 @@ function generateErrorImg($errorText) {
     $baseImg = imagecreate(416, 320);
     $bg = imagecolorallocate($baseImg, 255, 255, 255);
     $black = imagecolorallocate($baseImg, 0, 0, 0);
-    imagestring($baseImg, 5, 50, 50, 'Nu... negerai!', $black);
-    imagestring($baseImg, 5, 50, 70, $errorText, $black);
+    $yCoord = 50;
+    imagestring($baseImg, 5, 50, $yCoord, 'Nu... negerai!', $black);
+    $strArr = explode('\n', $errorText);
+    foreach ($strArr as $str) {
+        $yCoord += 20;
+        imagestring($baseImg, 5, 50, $yCoord, $str, $black);
+    }
     header("Content-type: image/png");
     imagepng($baseImg);
     imagedestroy($baseImg);
@@ -37,7 +42,7 @@ if (!$title || !$model || !$code || !$url || !$params) {
 
 // reiktų patikrinti ar yra mums taip reikalingas font'as
 if (!file_exists(FONT_FILE)) {
-    generateErrorImg('Nerastas šrifto failas \''.FONT_FILE.'\'');
+    generateErrorImg('Nerastas srifto failas:\n  \''.FONT_FILE.'\'');
     die();
 }
 
@@ -45,11 +50,20 @@ if (!file_exists(FONT_FILE)) {
 // etiketės matmenys 52x40mm, printeris palaiko 8 pikselius per milimetrą,
 // tai 416x320 pilnai padengtas be marginų
 $baseImg = imagecreate(416, 320);
+
 $bg = imagecolorallocate($baseImg, 255, 255, 255); // background'as balta spalva
-$black = imagecolorallocate($baseImg, 0, 0, 0);
-imagettftext($baseImg, 20, 0, 20, 50, $black, FONT_FILE, $title);
+$black = imagecolorallocate($baseImg, 0, 0, 0); // tekstas juoda
+
+// pavadinimas ir modelis
+imagettftext($baseImg, 20, 0, 10, 30, $black, FONT_FILE, $title);
+imagettftext($baseImg, 20, 0, 10, 55, $black, FONT_FILE, $model);
+imageline($baseImg, 10, 65, imagesx($baseImg)-10, 65, $black);
+
+
+
 header("Content-type: image/png");
 imagepng($baseImg);
+
 imagedestroy($baseImg);
 
 ?>
