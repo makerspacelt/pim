@@ -3,10 +3,20 @@
     <!---------------------------------------------------->
     <cms:config_list_view orderby='weight' order='asc' exclude='default-page' searchable='1'>
         <cms:field 'k_selector_checkbox' />
-        <cms:field 'k_page_title' sortable='0' group='tool_main_group' />
+        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'tool_model' header='Model' width='50' sortable='0' />
         <cms:field 'k_page_date' />
         <cms:field 'k_up_down' />
         <cms:field 'k_actions' />
+        <cms:style>
+            .col-title {
+                width: 5%; important!
+            }
+            td.col-tool_model {
+                font-weight: bold;
+                color: #333;
+            }
+        </cms:style>
     </cms:config_list_view>
     <!---------------------------------------------------->
     <cms:editable
@@ -18,15 +28,23 @@
     />
     
     <cms:config_form_view>
-        <cms:field 'k_page_title' label='Įrankio pavadinimas ir modelis' group='tool_main_info_group' />
-        <cms:field 'k_page_name' label='Įrankio vidinis pavadinimas' desc='palikti tuščią kad naudoti sugeneruotą sistemos' group='tool_main_info_group' />
+        <cms:field 'k_page_title' label='Įrankio pavadinimas' group='tool_main_info_group' order='1' />
+        <cms:field 'k_page_name' label='Įrankio vidinis pavadinimas' desc='palikti tuščią kad naudoti sugeneruotą sistemos' group='tool_main_info_group' order='3' />
     </cms:config_form_view>
+    
+    <cms:editable
+        name='tool_model'
+        label='Modelis'
+        type='text'
+        order='2'
+        group='tool_main_info_group'
+    />
     
     <cms:editable
         name='tool_barcode'
         label='Barkodas'
         type='text'
-        order='1'
+        order='4'
         group='tool_main_info_group'
     />
     
@@ -36,7 +54,7 @@
         type='textarea'
         required='1'
         validator_msg='required=Negali būti tuščias!'
-        order='2'
+        order='5'
         group='tool_main_info_group'
     />
     
@@ -47,7 +65,7 @@
         masterpage='gallery.php'
         field='tool_img_gallery'
         anchor_text='Peržiūrėti nuotraukas'
-        order='3'
+        order='6'
         group='tool_main_info_group'
     />
     
@@ -56,7 +74,7 @@
         label='Etiketės'
         type='relation'
         masterpage='tags.php'
-        order='4'
+        order='7'
         group='tool_main_info_group'
     />
     <!---------------------------------------------------->
