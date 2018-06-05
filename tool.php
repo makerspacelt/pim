@@ -203,7 +203,23 @@
                     Lipduko generavimas
                 </div>
                 <div class="card-body">
-                    <img src="label-generator/label.php">
+                    <cms:capture into='queryStr'>
+                        <cms:php>
+                            $params = array();
+                            <cms:show_repeatable 'tool_params'>
+                                $params["<cms:show tool_param_name />"] = "<cms:show tool_param_value />";
+                            </cms:show_repeatable>
+                            $toolArr = array(
+                                'title' => "<cms:show k_page_title />",
+                                'model' => "aaa",
+                                'code' => "<cms:show tool_barcode />",
+                                'url' => "<cms:show k_page_link />",
+                                'params' => $params
+                            );
+                            echo http_build_query($toolArr);
+                        </cms:php>
+                    </cms:capture>
+                    <img src="label-generator/label.php?<cms:show queryStr />">
                 </div>
               </div>
           </cms:if>

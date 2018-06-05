@@ -93,6 +93,14 @@ imagecopy(
 );
 imagestring($baseImg, 5, (imagesx($baseImg)-(strlen($code)*9))-MARGIN, 75+imagesy($barcode), $code, $black);
 
+// pridedame įrankio parametrus
+$y = 85;
+$fontSize = 13;
+foreach ($params as $key => $param) {
+    imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE, $key.': '.$param);
+    $y += $fontSize+5;
+}
+
 header("Content-type: image/png");
 imagepng($baseImg);
 
