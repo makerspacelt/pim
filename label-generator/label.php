@@ -41,8 +41,8 @@ if (isset($_GET['params']) && (count($_GET['params']) > 0)) {
 }
 
 // apkarpome pavadinimą ir modelį, kad nebūtų per ilgas, ribojam iki 24 simbolių
-$title = substr($title, 0, TITLE_LEN-1).(strlen($title) > TITLE_LEN-1 ? '~' : '');
-$model = substr($model, 0, MODEL_LEN-1).(strlen($model) > MODEL_LEN-1 ? '~' : '');
+$title = mb_substr($title, 0, TITLE_LEN-1).(mb_strlen($title) > TITLE_LEN-1 ? '~' : '');
+$model = mb_substr($model, 0, MODEL_LEN-1).(mb_strlen($model) > MODEL_LEN-1 ? '~' : '');
 
 // patikriname ar bent vienas iš reikiamų parametrų yra tuščias
 // ir jeigu bent vieno trūksta, tai rodome klaidą
@@ -76,14 +76,14 @@ $qr = QRCode::getMinimumQRCode($url, QR_ERROR_CORRECT_LEVEL_L)->createImage(8, 4
 imagecopyresized(
     $baseImg, $qr,
     (imagesx($baseImg)-$qrSize)-MARGIN,
-    (imagesy($baseImg)-$qrSize)-MARGIN,
+    (imagesy($baseImg)-$qrSize)-MARGIN-10,
     0, 0, $qrSize, $qrSize, imagesx($qr), imagesy($qr)
 );
 
 // įkeliam barkodą
 // info dėl built-in fontų dydžio: https://docstore.mik.ua/orelly/webprog/pcook/ch15_06.htm
 $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
-$barcode = imagecreatefromstring($generator->getBarcode($code, $generator::TYPE_INTERLEAVED_2_5_CHECKSUM, 1.8));
+$barcode = imagecreatefromstring($generator->getBarcode($code, $generator::TYPE_INTERLEAVED_2_5_CHECKSUM));
 $barcodeLen = imagesx($barcode);
 imagecopy(
     $baseImg, $barcode,
@@ -95,10 +95,14 @@ imagestring($baseImg, 5, (imagesx($baseImg)-(strlen($code)*9))-MARGIN, 75+images
 
 // pridedame įrankio parametrus
 $y = 85;
-$fontSize = 13;
+$fontSize = 15;
+$lineLen = 15;
 foreach ($params as $key => $param) {
-    imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE, $key.': '.$param);
-    $y += $fontSize+5;
+    $line = $key.': '.$param;
+    imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE,
+        mb_substr($line, 0, $lineLen).(mb_strlen($line) > $lineLen ? '~' : '')
+    );
+    $y += $fontSize+8;
 }
 
 header("Content-type: image/png");
