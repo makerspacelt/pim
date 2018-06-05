@@ -45,8 +45,9 @@
         label='Barkodas'
         type='text'
         order='4'
-        group='tool_main_info_group'
-    />
+        group='tool_main_info_group'>
+        <cms:generate-code />
+    </cms:editable>
     
     <cms:editable
         name='tool_desc'
