@@ -41,7 +41,7 @@ if (isset($_GET['params']) && (count($_GET['params']) > 0)) {
 }
 
 // apkarpome pavadinimą ir modelį, kad nebūtų per ilgas, ribojam iki 24 simbolių
-$title = mb_substr($title, 0, TITLE_LEN-1).(mb_strlen($title) > TITLE_LEN-1 ? '~' : '');
+$title = mb_strtoupper(mb_substr($title, 0, TITLE_LEN-1)).(mb_strlen($title) > TITLE_LEN-1 ? '~' : '');
 $model = mb_substr($model, 0, MODEL_LEN-1).(mb_strlen($model) > MODEL_LEN-1 ? '~' : '');
 
 // patikriname ar bent vienas iš reikiamų parametrų yra tuščias
@@ -66,9 +66,9 @@ $bg = imagecolorallocate($baseImg, 255, 255, 255); // background'as balta spalva
 $black = imagecolorallocate($baseImg, 0, 0, 0); // tekstas juoda
 
 // pavadinimas ir modelis
-imagettftext($baseImg, 20, 0, MARGIN, 30, $black, FONT_FILE, $title);
-imagettftext($baseImg, 20, 0, MARGIN, 55, $black, FONT_FILE, $model);
-imageline($baseImg, MARGIN, 65, imagesx($baseImg)-MARGIN, 65, $black);
+imagettftext($baseImg, 35, 0, MARGIN, 40, $black, FONT_FILE, $title);
+imagettftext($baseImg, 20, 0, MARGIN, 70, $black, FONT_FILE, $model);
+imageline($baseImg, MARGIN, 120, imagesx($baseImg)-MARGIN, 120, $black);
 
 // įkeliam QR kodą
 $qrSize = 170;
@@ -84,20 +84,19 @@ imagecopyresized(
 // info dėl built-in fontų dydžio: https://docstore.mik.ua/orelly/webprog/pcook/ch15_06.htm
 $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
 $barcode = imagecreatefromstring($generator->getBarcode($code, $generator::TYPE_INTERLEAVED_2_5_CHECKSUM));
-$barcodeLen = imagesx($barcode);
 imagecopy(
     $baseImg, $barcode,
-    (imagesx($baseImg)-$barcodeLen)-MARGIN, 75,
+    MARGIN, (imagesy($baseImg)-imagesy($barcode))-MARGIN-10,
     0, 0,
     imagesx($barcode), imagesy($barcode)
 );
-imagestring($baseImg, 5, (imagesx($baseImg)-(strlen($code)*9))-MARGIN, 75+imagesy($barcode), $code, $black);
+imagestring($baseImg, 5, MARGIN, (imagesy($baseImg)-15)-imagesy($barcode)-MARGIN-12, $code, $black);
 
 // pridedame įrankio parametrus
-$y = 85;
+$y = 160;
 $fontSize = 15;
 $lineLen = 15;
-foreach ($params as $key => $param) {
+foreach (array_slice($params, 0, 4) as $key => $param) {
     $line = $key.': '.$param;
     imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE,
         mb_substr($line, 0, $lineLen).(mb_strlen($line) > $lineLen ? '~' : '')
