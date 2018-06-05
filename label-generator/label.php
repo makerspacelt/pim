@@ -1,6 +1,8 @@
 <?php
 
 require_once('qrcode.php');
+require_once('php-barcode-generator/BarcodeGenerator.php');
+require_once('php-barcode-generator/BarcodeGeneratorPNG.php');
 
 // nustatome konstantas
 define('FONT_FILE', __DIR__.'/FreeMonoBold.ttf');
@@ -69,13 +71,27 @@ imagettftext($baseImg, 20, 0, MARGIN, 55, $black, FONT_FILE, $model);
 imageline($baseImg, MARGIN, 65, imagesx($baseImg)-MARGIN, 65, $black);
 
 // įkeliam QR kodą
+$qrSize = 170;
 $qr = QRCode::getMinimumQRCode($url, QR_ERROR_CORRECT_LEVEL_L)->createImage(8, 4);
 imagecopyresized(
     $baseImg, $qr,
-    (imagesx($baseImg)-170)-MARGIN,
-    (imagesy($baseImg)-170)-MARGIN,
-    0, 0, 170, 170, imagesx($qr), imagesy($qr)
+    (imagesx($baseImg)-$qrSize)-MARGIN,
+    (imagesy($baseImg)-$qrSize)-MARGIN,
+    0, 0, $qrSize, $qrSize, imagesx($qr), imagesy($qr)
 );
+
+// įkeliam barkodą
+// info dėl built-in fontų dydžio: https://docstore.mik.ua/orelly/webprog/pcook/ch15_06.htm
+$generator = new Picqer\Barcode\BarcodeGeneratorPNG();
+$barcode = imagecreatefromstring($generator->getBarcode($code, $generator::TYPE_INTERLEAVED_2_5_CHECKSUM, 1.8));
+$barcodeLen = imagesx($barcode);
+imagecopy(
+    $baseImg, $barcode,
+    (imagesx($baseImg)-$barcodeLen)-MARGIN, 75,
+    0, 0,
+    imagesx($barcode), imagesy($barcode)
+);
+imagestring($baseImg, 5, (imagesx($baseImg)-(strlen($code)*9))-MARGIN, 75+imagesy($barcode), $code, $black);
 
 header("Content-type: image/png");
 imagepng($baseImg);
