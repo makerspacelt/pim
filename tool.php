@@ -229,7 +229,7 @@
                             </cms:show_repeatable>
                             $toolArr = array(
                                 'title' => "<cms:show k_page_title />",
-                                'model' => "aaa",
+                                'model' => "<cms:show tool_model />",
                                 'code' => "<cms:show tool_barcode />",
                                 'url' => "<cms:show k_page_link />",
                                 'params' => $params
