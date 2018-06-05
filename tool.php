@@ -193,7 +193,7 @@
             <img class="card-img-top img-fluid" src="images/default-tool-pic.png" alt="įrankio foto">
         </cms:if>
         <div class="card-body">
-          <h3 class="card-title"><cms:show k_page_title /></h3>
+          <h3 class="card-title"><cms:show k_page_title /> <cms:show tool_model /></h3>
           <h5 class="card-subtitle mb-3 text-muted"><cms:show tool_barcode /></h5>
           <p class="card-text"><cms:nl2br><cms:show tool_desc /></cms:nl2br></p>
           <p class="card-text">
@@ -237,7 +237,7 @@
                             echo http_build_query($toolArr);
                         </cms:php>
                     </cms:capture>
-                    <img style="width:30%" src="label-generator/label.php?<cms:show queryStr />">
+                    <img style="width:40%" src="label-generator/label.php?<cms:show queryStr />">
                 </div>
               </div>
           </cms:if>
