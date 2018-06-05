@@ -237,7 +237,7 @@
                             echo http_build_query($toolArr);
                         </cms:php>
                     </cms:capture>
-                    <img src="label-generator/label.php?<cms:show queryStr />">
+                    <img style="width:30%" src="label-generator/label.php?<cms:show queryStr />">
                 </div>
               </div>
           </cms:if>

@@ -9,7 +9,7 @@
             </cms:reverse_related_pages>
         </a>
         <div class="card-body">
-            <h5 class="card-title tool-listing-title"><a href="<cms:show k_page_link />"><cms:show k_page_title /></a></h5>
+            <h5 class="card-title tool-listing-title"><a href="<cms:show k_page_link />"><cms:show k_page_title /> <cms:show tool_model /></a></h5>
             <h6 class="card-subtitle mb-3 text-muted"><cms:show tool_barcode /></h6>
             <p class="card-text tool-listing-text"><cms:nl2br><cms:show tool_desc /></cms:nl2br></p>
         </div>
