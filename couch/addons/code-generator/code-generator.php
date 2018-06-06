@@ -25,9 +25,9 @@ class code_generator_class {
             $tries = 0;
             while ($exists) {
                 $tries++;
+                $code = $this->generateCode();
                 $rs = $DB->raw_select(sprintf('SELECT %1$s.value, %2$s.name FROM %1$s RIGHT JOIN %2$s ON %2$s.id = %1$s.field_id WHERE %2$s.name = \'%3$s\' AND %1$s.value != \'\' AND %1$s.value = \'%4$s\'',
                 K_TBL_DATA_TEXT, K_TBL_FIELDS, $params[0]['rhs'], $code));
-                $code = $this->generateCode();
                 if (count($rs) == 0) $exists = false;
             }
             // echo $tries;
