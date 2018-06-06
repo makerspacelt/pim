@@ -63,8 +63,9 @@
         desc='bus sugeneruotas išsaugojus'
         type='uid'
         begin_from='1'
-        min_length='4'
-        prefix='[YYYY][M][D]'
+        min_length='6'
+        prefix='[YYYY]'
+        search_type='integer'
         order='4'
         group='tool_main_info_group'
     />
