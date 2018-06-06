@@ -261,7 +261,17 @@
                             echo http_build_query($toolArr);
                         </cms:php>
                     </cms:capture>
-                    <img style="width: 100%; max-width: 312px" class="img-fluid img-thumbnail rounded" src="label-generator/label.php?<cms:show queryStr />">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-sm">
+                                <img style="width: 100%; max-width: 312px" class="img-fluid img-thumbnail rounded" src="label-generator/label.php?<cms:show queryStr />">
+                            </div>
+                            <div class="col-sm my-4">
+                                <button class="btn btn-secondary">Spausdinti</button>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
               </div>
           </cms:if>
