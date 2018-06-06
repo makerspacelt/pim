@@ -3,8 +3,9 @@
     <!---------------------------------------------------->
     <cms:config_list_view orderby='weight' order='asc' exclude='default-page' searchable='1'>
         <cms:field 'k_selector_checkbox' />
-        <cms:field 'k_page_title' sortable='0' />
+        <cms:field 'k_page_title' sortable='1' />
         <cms:field 'tool_model' header='Model' width='50' sortable='0' />
+        <cms:field 'tool_barcode' header='Barcode' width='50' sortable='0' />
         <cms:field 'k_page_date' />
         <cms:field 'k_up_down' />
         <cms:field 'k_actions' />
