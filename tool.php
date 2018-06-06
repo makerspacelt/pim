@@ -53,13 +53,13 @@
     <cms:editable
         name='tool_barcode'
         label='Barkodas'
-        desc='11 skaitmenų'
-        type='text'
+        desc='bus sugeneruotas išsaugojus'
+        type='uid'
+        begin_from='1'
+        min_length='4'
+        prefix='[YYYY][M][D]'
         order='4'
         group='tool_main_info_group'
-        required='1'
-        validator='regex=#^\d{11}$#'
-        validator_msg='regex=Blogas kodo formatas!|required=Negali būti tuščias!'
     />
     
     <cms:editable

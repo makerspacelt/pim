@@ -9,7 +9,7 @@ couch/addons/*
 !couch/addons/url-detect
 !couch/addons/jsonify
 !couch/addons/bootstrap-grid
-!couch/addons/code-generator
+!couch/addons/uid
 
 !couch/includes
 couch/includes/*
