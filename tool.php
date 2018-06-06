@@ -261,7 +261,7 @@
                             echo http_build_query($toolArr);
                         </cms:php>
                     </cms:capture>
-                    <img style="width:40%" src="label-generator/label.php?<cms:show queryStr />">
+                    <img style="width: 100%; max-width: 312px" class="img-fluid img-thumbnail rounded" src="label-generator/label.php?<cms:show queryStr />">
                 </div>
               </div>
           </cms:if>
