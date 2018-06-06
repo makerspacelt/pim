@@ -46,7 +46,7 @@
         type='text'
         order='4'
         group='tool_main_info_group'>
-        <cms:generate-code />
+        <cms:generate-code field_name='tool_barcode' />
     </cms:editable>
     
     <cms:editable
