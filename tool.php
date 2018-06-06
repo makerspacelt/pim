@@ -40,6 +40,12 @@
             group='tool_main_info_group'
             order='3'
         />
+        
+        <cms:style>
+            div#k_element_tool_barcode {
+                font-size:20px;
+            }
+        </cms:style>
     </cms:config_form_view>
     
     <cms:editable
