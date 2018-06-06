@@ -28,16 +28,18 @@
     />
     
     <cms:config_form_view>
-        <cms:field 'k_page_title' label='Įrankio pavadinimas' group='tool_main_info_group' order='1' />
-        <cms:field 'k_page_name' label='Įrankio vidinis pavadinimas' desc='palikti tuščią kad naudoti sugeneruotą sistemos' group='tool_main_info_group' order='3' />
-        <cms:field 'tool_barcode'>
-            <cms:input
-                name=k_field_input_name
-                type='bound'
-                trust_mode='1'
-                value="<cms:generate-code field_name='tool_barcode' />"
-            />
-        </cms:field>
+        <cms:field 'k_page_title'
+            label='Įrankio pavadinimas'
+            group='tool_main_info_group'
+            order='1'
+        />
+        
+        <cms:field 'k_page_name'
+            label='Įrankio vidinis pavadinimas'
+            desc='palikti tuščią kad naudoti sugeneruotą sistemos'
+            group='tool_main_info_group'
+            order='3'
+        />
     </cms:config_form_view>
     
     <cms:editable
@@ -57,7 +59,7 @@
         group='tool_main_info_group'
         required='1'
         validator='regex=#^\d{11}$#'
-        validator_msg='regex=Blogas kodo formatas!'
+        validator_msg='regex=Blogas kodo formatas!|required=Negali būti tuščias!'
     />
     
     <cms:editable
