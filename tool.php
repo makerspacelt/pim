@@ -225,8 +225,10 @@
                     <cms:capture into='queryStr'>
                         <cms:php>
                             $params = array();
-                            <cms:show_repeatable 'tool_params'>
-                                $params["<cms:show tool_param_name />"] = "<cms:show tool_param_value />";
+                            <cms:show_repeatable 'tool_params' startcount='0'>
+                                <cms:if k_count lt '4'>
+                                    $params["<cms:show tool_param_name />"] = "<cms:show tool_param_value />";
+                                </cms:if>
                             </cms:show_repeatable>
                             $toolArr = array(
                                 'title' => "<cms:show k_page_title />",

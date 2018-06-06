@@ -96,7 +96,7 @@ imagestring($baseImg, 5, MARGIN, (imagesy($baseImg)-15)-imagesy($barcode)-MARGIN
 $y = 160;
 $fontSize = 15;
 $lineLen = 15;
-foreach (array_slice($params, 0, 4) as $key => $param) {
+foreach ($params as $key => $param) {
     $line = $key.': '.$param;
     imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE,
         mb_substr($line, 0, $lineLen).(mb_strlen($line) > $lineLen ? '~' : '')
