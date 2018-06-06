@@ -96,12 +96,16 @@ imagestring($baseImg, 5, MARGIN, (imagesy($baseImg)-15)-imagesy($barcode)-MARGIN
 $y = 160;
 $fontSize = 15;
 $lineLen = 15;
-foreach ($params as $key => $param) {
-    $line = $key.': '.$param;
-    imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE,
-        mb_substr($line, 0, $lineLen).(mb_strlen($line) > $lineLen ? '~' : '')
-    );
-    $y += $fontSize+8;
+if ((count($params) > 0) && (!isset($params[0]))) {
+    foreach ($params as $key => $param) {
+        $line = $key.': '.$param;
+        imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE,
+            mb_substr($line, 0, $lineLen).(mb_strlen($line) > $lineLen ? '~' : '')
+        );
+        $y += $fontSize+8;
+    }
+} else {
+    imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE, 'Parametrų nėra');
 }
 
 header("Content-type: image/png");
