@@ -7,7 +7,7 @@ require_once('php-barcode-generator/BarcodeGeneratorPNG.php');
 // nustatome konstantas
 define('FONT_FILE', __DIR__.'/FreeMonoBold.ttf');
 define('MARGIN', 10);
-define('TITLE_LEN', 24);
+define('TITLE_LEN', 14);
 define('MODEL_LEN', 24);
 
 // Funkcija kuri sugeneruoja klaidos paveiksliuką
@@ -46,7 +46,7 @@ $model = mb_substr($model, 0, MODEL_LEN-1).(mb_strlen($model) > MODEL_LEN-1 ? '~
 
 // patikriname ar bent vienas iš reikiamų parametrų yra tuščias
 // ir jeigu bent vieno trūksta, tai rodome klaidą
-if (!$title || !$model || !$code || !$url || !$params) {
+if (!$title || !$code || !$url) {
     generateErrorImg('Perduoti ne visi parametrai :(');
     die();
 }
@@ -96,7 +96,7 @@ imagestring($baseImg, 5, MARGIN, (imagesy($baseImg)-15)-imagesy($barcode)-MARGIN
 $y = 160;
 $fontSize = 15;
 $lineLen = 15;
-if ((count($params) > 0) && (!isset($params[0]))) {
+if ($params && (count($params) > 0) && (!isset($params[0]))) {
     foreach ($params as $key => $param) {
         $line = $key.': '.$param;
         imagettftext($baseImg, $fontSize, 0, MARGIN, $y, $black, FONT_FILE,
