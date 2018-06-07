@@ -65,7 +65,7 @@
         begin_from='1'
         min_length='6'
         prefix='[YYYY]'
-        search_type='integer'
+        search_type='text'
         order='4'
         group='tool_main_info_group'
     />
