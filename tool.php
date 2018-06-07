@@ -267,7 +267,10 @@
                                 <img style="width: 100%; max-width: 312px" class="img-fluid img-thumbnail rounded" src="label-generator/label.php?<cms:show queryStr />">
                             </div>
                             <div class="col-sm my-4">
-                                <button class="btn btn-secondary">Spausdinti</button>
+                                <form method="post" action="label-printer/print-label.php" target="_blank">
+                                    <input type="hidden" name="pngPath" value="<cms:show k_site_link />label-generator/label.php?<cms:show queryStr />" />
+                                    <input type="submit" value="Spausdinti" class="btn btn-secondary" />
+                                </form>
                             </div>
                         </div>
                     </div>
