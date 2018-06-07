@@ -56,6 +56,9 @@
                         </cms:php>
                     "/>
                     <cms:search masterpage='tool.php' keywords=searchTerm>
+                        <cms:if k_total_records eq '1'>
+                            <cms:redirect url=k_page_link />
+                        </cms:if>
                         <cms:embed 'tool_card.php' />
                         <cms:no_results>
                             <cms:embed 'nieko_nerasta.php' />
