@@ -42,6 +42,19 @@
             <div class="row my-4">
                 <cms:set searchTerm="<cms:gpc 'search_input' method='post' default='' />" />
                 <cms:if "<cms:not_empty searchTerm />">
+                    <cms:set searchTerm="
+                        <cms:php>
+                            if (is_numeric(trim('<cms:show searchTerm />')) && (strlen('<cms:show searchTerm />') >= 10)) {
+                                if (strlen('<cms:show searchTerm />') == 11) {
+                                    echo substr('<cms:show searchTerm />', 0, -1);
+                                } else {
+                                    echo '<cms:show searchTerm />';
+                                }
+                            } else {
+                                echo '<cms:show searchTerm />';
+                            }
+                        </cms:php>
+                    "/>
                     <cms:search masterpage='tool.php' keywords=searchTerm>
                         <cms:embed 'tool_card.php' />
                         <cms:no_results>
