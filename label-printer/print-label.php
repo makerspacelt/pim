@@ -6,6 +6,14 @@ $pngPath = (isset($_POST['pngPath'])) ? filter_var(trim($_POST['pngPath']), FILT
 $ep = new esimPrint();
 $code = $ep->printPng($pngPath);
 
-echo '<script type="text/javascript">window.close();</script>';
+$fp = fsockopen('print-label.lan', 80, $errno, $errstr);
+if (!$fp) {
+    echo "ERROR: $errno - $errstr<br />\n";
+} else {
+    fwrite($fp, $code);
+    fread($fp, 26);
+    fclose($fp);
+    echo '<script type="text/javascript">window.close();</script>';
+}
 
 ?>
