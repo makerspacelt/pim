@@ -31,6 +31,13 @@ rm -r couch_
 rm -r "${PROJECT_ROOT}/tmp"
 
 
+echo -e '\n## Touching random files... oh uh ... '
+wget -qO /dev/null http://web/tags.php
+wget -qO /dev/null http://web/tool.php
+wget -qO /dev/null http://web/tools.php
+wget -qO /dev/null http://web/gallery.php
+
+
 echo -e '\n## Setting up database ... '
 mysql -f -uproject -pproject -hmysql project < ${PROJECT_ROOT}/db/init.sql
 
