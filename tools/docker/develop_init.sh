@@ -36,11 +36,16 @@ mysql -f -uproject -pproject -hmysql project < ${PROJECT_ROOT}/db/init.sql
 
 
 echo -e '\n## Touching random files... oh uh ... '
-wget -qO /dev/null http://web/tags.php
-wget -qO /dev/null http://web/tool.php
-wget -qO /dev/null http://web/tools.php
-wget -qO /dev/null http://web/gallery.php
 
+wget -qO /dev/null --keep-session-cookies --save-cookies /tmp/c --load-cookies /tmp/c --post-data 'k_user_name=admin&k_user_pwd=admin&k_cookie_test=1&k_login=1' http://web/couch/login.php?redirect=%2F
+
+wget -qO /dev/null --keep-session-cookies --save-cookies /tmp/c --load-cookies /tmp/c --post-data 'k_user_name=admin&k_user_pwd=admin&k_cookie_test=1&k_login=1' http://web/couch/login.php?redirect=%2F
+
+for file in tags tool gallery
+do
+	wget -qO /dev/null --keep-session-cookies --save-cookies /tmp/c --load-cookies /tmp/c http://web/${file}.php
+done
+rm /tmp/c
 
 
 #echo -e '\n## Setting up permissions ... '
