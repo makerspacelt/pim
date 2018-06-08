@@ -1,4 +1,5 @@
 <?php require_once( 'couch/cms.php' ); ?>
+<cms:template name='tools_json_template' hidden='1' order='101' />
 
 <cms:if "<cms:not_empty "<cms:gpc 't' method='get' default='' />" />">
     <cms:set arg="<cms:php>

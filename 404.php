@@ -1,4 +1,6 @@
 <?php require_once( 'couch/cms.php' ); ?>
+<cms:template name='404_template' hidden='1' order='100' />
+
 <cms:embed 'head.php' />
 <cms:embed 'header.php' />
 <div class="container">
