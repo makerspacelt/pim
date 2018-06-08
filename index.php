@@ -38,7 +38,7 @@
 <div class="container">
     <div class="row">
     <cms:embed 'sidebar.php' />
-        <div class="col-lg-9">
+        <div class="col-lg-9" id="results">
             <div class="row my-4">
                 <cms:set searchTerm="<cms:gpc 'search_input' method='post' default='' />" />
                 <cms:if "<cms:not_empty searchTerm />">
@@ -57,7 +57,7 @@
                     "/>
                     <cms:search masterpage='tool.php' keywords=searchTerm>
                         <cms:if k_total_records eq '1'>
-                            <cms:redirect url=k_page_link />
+                            <cms:redirect url="<cms:show k_page_link />#tool_content" />
                         </cms:if>
                         <cms:embed 'tool_card.php' />
                         <cms:no_results>

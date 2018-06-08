@@ -184,7 +184,7 @@
   <div class="row">
     <cms:embed 'sidebar.php' />
 
-    <div class="col-lg-9">
+    <div class="col-lg-9" id="tool_content">
 
       <div class="card mt-4">
         <cms:set toolImgCount="<cms:reverse_related_pages field='tool_img_gallery' masterpage='gallery.php' count_only='1' />" />

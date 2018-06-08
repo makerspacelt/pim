@@ -35,7 +35,7 @@
 <div class="container">
     <div class="row">
     <cms:embed 'sidebar.php' />
-        <div class="col-lg-9">
+        <div class="col-lg-9" id="results">
             <div class="row my-4">
                 <cms:pages masterpage='tool.php' orderby='weight' order='asc' page_name='NOT default-page' custom_field="<cms:show arg />">
                     <cms:embed 'tool_card.php' />
