@@ -16,6 +16,8 @@ function setPerms {
 }
 
 
+echo -e '\n## Setting up CMS ... '
+
 mkdir -p "${PROJECT_ROOT}/tmp"
 cd "${PROJECT_ROOT}/tmp"
 wget -O cms.zip "https://github.com/CouchCMS/CouchCMS/archive/v2.1.zip"
@@ -27,6 +29,11 @@ mv ../tmp/CouchCMS*/couch ./
 cp -r couch_/* ./couch/
 rm -r couch_
 rm -r "${PROJECT_ROOT}/tmp"
+
+
+echo -e '\n## Setting up database ... '
+mysql -f -uproject -pproject -hmysql project < ${PROJECT_ROOT}/db/init.sql
+
 
 #echo -e '\n## Setting up permissions ... '
 #setPerms "${PROJECT_ROOT}/var"
