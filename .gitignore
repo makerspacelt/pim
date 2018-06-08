@@ -1,22 +1,23 @@
-couch/*
+web/couch/*
 
-couch/snippets/.htaccess
-!couch/snippets
+web/couch/snippets/.htaccess
+!web/couch/snippets
 
-!couch/addons
-couch/addons/*
-!couch/addons/kfunctions.php
-!couch/addons/url-detect
-!couch/addons/jsonify
-!couch/addons/bootstrap-grid
-!couch/addons/uid
+!web/couch/addons
+web/couch/addons/*
+!web/couch/addons/kfunctions.php
+!web/couch/addons/url-detect
+!web/couch/addons/jsonify
+!web/couch/addons/bootstrap-grid
+!web/couch/addons/uid
 
-!couch/includes
-couch/includes/*
-!couch/includes/plupload
-couch/includes/plupload/*
-!couch/includes/plupload/upload.php
+!web/couch/includes
+web/couch/includes/*
+!web/couch/includes/plupload
+web/couch/includes/plupload/*
+!web/couch/includes/plupload/upload.php
 
-!couch/theme
-couch/theme/*
-!couch/theme/makerspace
+!web/couch/theme
+web/couch/theme/*
+!web/couch/theme/makerspace
+
