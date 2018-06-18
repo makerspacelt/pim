@@ -1,4 +1,9 @@
-<?php require_once( 'couch/cms.php' ); ?>
+<?php
+    // èia vienintelis priimtinas bûdas nerodyti CMS'o info apaèioje, kad bûtø validus JSON'as
+    // galioja tik ðitam puslapyje... manau kûrëjas nesupyks ;) 
+    define('K_PAID_LICENSE', 1);
+    require_once( 'couch/cms.php' );
+?>
 <cms:template name='tools_json_template' hidden='1' order='101' />
 
 <cms:if "<cms:not_empty "<cms:gpc 't' method='get' default='' />" />">
