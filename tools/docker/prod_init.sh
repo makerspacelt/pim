@@ -31,6 +31,10 @@ rm -r couch_
 rm -r "${PROJECT_ROOT}/tmp"
 
 
+cd "${PROJECT_ROOT}"
+cp -f "${PROJECT_ROOT}/web/couch/config{.prod,}.php"
+
+
 echo -e '\n## Setting up database ... '
 mysql -f -uproject -pproject -hmysql project < ${PROJECT_ROOT}/db/init.sql
 
