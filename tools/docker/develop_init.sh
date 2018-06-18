@@ -48,7 +48,6 @@ done
 rm /tmp/c
 
 
-#echo -e '\n## Setting up permissions ... '
-#setPerms "${PROJECT_ROOT}/var"
-
+echo -e '\n## Setting up permissions ... '
+setPerms "${PROJECT_ROOT}/web/couch/uploads"
 
