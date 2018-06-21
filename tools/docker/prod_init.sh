@@ -35,10 +35,6 @@ cd "${PROJECT_ROOT}"
 cp -f "${PROJECT_ROOT}"/web/couch/config{.prod,}.php
 
 
-echo -e '\n## Setting up database ... '
-mysql -f -uproject -pproject -hmysql project < "${PROJECT_ROOT}/db/init.sql"
-
-
 
 echo -e '\n## Setting up permissions ... '
 setPerms "${PROJECT_ROOT}/../uploads"
